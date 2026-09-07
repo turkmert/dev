@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mert Turk — Senior IT / Network &amp; Security specialist. Linux, networking, CCNA, TryHackMe.">
+<title>mert@root: ~ — MERT TURK</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="matrix-rain" aria-hidden="true"></canvas>
+<div id="cursor-glow" aria-hidden="true"></div>
+<div class="scanlines" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<div id="boot" role="status" aria-live="polite">
+  <div id="boot-lines"></div>
+  <button id="skip-boot" type="button">skip boot sequence →</button>
+</div>
+
+<header class="term-bar">
+  <div class="term-dots" aria-hidden="true">
+    <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
+  </div>
+  <img class="logo-mark" src="img/favicon.png" alt="anonymous mask logo">
+  <div class="term-title">mert@root: ~</div>
+  <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false" aria-label="toggle ambient sound">
+    <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+  </button>
+  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="term-nav">[ menu ]</button>
+  <nav class="term-nav" id="term-nav">
+    <a href="#hero" class="current">home</a>
+    <a href="#certs">certs</a>
+    <a href="#badges">badges</a>
+    <a href="#stats">thm</a>
+    <a href="#works">works</a>
+    <a href="#contact">contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section id="hero" class="term-panel">
+    <div class="panel-head"><span class="prompt">$</span> whoami</div>
+    <h1 class="glitch" id="glitch-name" data-text="MERT TURK">MERT TÜRK</h1>
+    <p class="role-line"><span class="arrow">&gt;</span> <span id="role-type"></span><span class="cursor">&nbsp;</span></p>
+    <p class="hero-sub"># senior it &mdash; network &amp; security specialist based in Türkiye. linux, routing &amp; switching, and the occasional CTF room.</p>
+    <div class="hero-tags">
+      <span class="tag">#linux</span><span class="tag">#networking</span><span class="tag">#pentest</span><span class="tag">#ccna</span><span class="tag">#tryhackme</span>
+    </div>
+    <p class="scroll-cue">scroll to continue the session ↓</p>
+  </section>
+
+  <section id="certs" class="term-panel">
+    <div class="panel-head"><span class="prompt">$</span> cat certifications.log</div>
+    <ul class="log-list">
+      <li><span class="status ok">[VERIFIED]</span> <span class="cert-name">Cyber Security</span> — <a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-46F140UPHW.pdf" target="_blank" rel="noopener">view credential</a></li>
+      <li><span class="status ok">[VERIFIED]</span> <span class="cert-name">CompTIA Pentest+</span> — <a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-EUNZO5A4YQ.pdf" target="_blank" rel="noopener">view credential</a></li>
+      <li><span class="status ok">[VERIFIED]</span> <span class="cert-name">Pre Security</span> — <a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-4IRSPNIQE7.pdf" target="_blank" rel="noopener">view credential</a></li>
+      <li><span class="status ok">[VERIFIED]</span> <span class="cert-name">Web Fundamentals</span> — <a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-F9CKVP5PHU.pdf" target="_blank" rel="noopener">view credential</a></li>
+    </ul>
+  </section>
+
+  <section id="badges" class="term-panel">
+    <div class="panel-head"><span class="prompt">$</span> ls -la ./badges/</div>
+    <div class="badge-grid">
+      <div class="badge-card">
+        <i class="fa-solid fa-network-wired"></i>
+        <h3>CCNA: Introduction to Networks</h3>
+        <a href="https://www.credly.com/badges/dfcff59c-e15d-4c19-91af-3b12821b2414/public_url" target="_blank" rel="noopener">view on credly →</a>
+      </div>
+      <div class="badge-card">
+        <i class="fa-solid fa-diagram-project"></i>
+        <h3>CCNA: Switching, Routing, and Wireless Essentials</h3>
+        <a href="https://www.credly.com/badges/536dc143-ddaa-45a8-8a43-069bb524ed5e/public_url" target="_blank" rel="noopener">view on credly →</a>
+      </div>
+      <div class="badge-card">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3>CCNA: Enterprise Networking, Security, and Automation</h3>
+        <a href="https://www.credly.com/badges/30961e93-264d-49b0-bcc7-741aacbecb2a/public_url" target="_blank" rel="noopener">view on credly →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="stats" class="term-panel">
+    <div class="panel-head"><span class="prompt">$</span> curl -s tryhackme.com/api/v2/public-profile/turkmert</div>
+    <div class="thm-card">
+      <div class="thm-id">
+        <img class="thm-badge-img" src="/img/favicon.png" alt="turkmert TryHackMe badge">
+        <div>
+          <div class="thm-handle">turkmert</div>
+          <div class="thm-tag">[0xD][LEGEND] 🇹🇷</div>
+        </div>
+      </div>
+      <div class="stat-grid">
+        <div class="stat highlight"><div class="num" data-target="2" data-suffix="%">0%</div><div class="label">top percentile</div></div>
+        <div class="stat"><div class="num" data-target="32442">0</div><div class="label">global rank</div></div>
+        <div class="stat"><div class="num" data-target="18">0</div><div class="label">badges earned</div></div>
+        <div class="stat"><div class="num" data-target="151">0</div><div class="label">rooms completed</div></div>
+        <div class="stat"><div class="num" data-target="0">0</div><div class="label">day streak</div></div>
+      </div>
+      <a class="btn-term" href="https://tryhackme.com/p/turkmert" target="_blank" rel="noopener">view full profile</a>
+    </div>
+  </section>
+
+  <section id="works" class="term-panel">
+    <div class="panel-head"><span class="prompt">$</span> git log --oneline --graph</div>
+    <ul class="commit-list">
+      <li>
+        <div class="commit-meta"><span class="commit-hash">#a1e29c</span><span>pardus / volunteer platform</span></div>
+        <div class="commit-title">Pardus Gönüllü Platformu</div>
+        <div class="commit-body">Contributor to Türkiye's national Debian-based operating system — beta testing, development, design, translation, documentation, and proposals.</div>
+        <div class="commit-links"><a href="https://gonullu.pardus.org.tr/" target="_blank" rel="noopener">gonullu.pardus.org.tr →</a></div>
+      </li>
+      <li>
+        <div class="commit-meta"><span class="commit-hash">#7f30bd</span><span>community / forums</span></div>
+        <div class="commit-title">Pardus Forum &amp; TryHackMe Community</div>
+        <div class="commit-body">Producing solutions and recommendations around hardware, systems, networking, and security topics across community forums.</div>
+        <div class="commit-links">
+          <a href="https://forum.pardus.org.tr/" target="_blank" rel="noopener">Pardus Forum →</a>
+          <a href="https://help.tryhackme.com/en/collections/3665116-community" target="_blank" rel="noopener">THM Forum →</a>
+        </div>
+      </li>
+      <li>
+        <div class="commit-meta"><span class="commit-hash">#c48e01</span><span>tryhackme / security</span></div>
+        <div class="commit-title">TryHackMe Platform</div>
+        <div class="commit-body">Ongoing hands-on work in IT security, network security, and networking technologies — 151 rooms deep and counting.</div>
+        <div class="commit-links"><a href="https://tryhackme.com/p/turkmert" target="_blank" rel="noopener">tryhackme.com/p/turkmert →</a></div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="contact" class="term-panel">
+    <div class="panel-head"><span class="prompt">$</span> ./contact.sh --list</div>
+    <div class="contact-links">
+      <a href="https://tryhackme.com/p/turkmert" target="_blank" rel="noopener"><i class="fa-solid fa-terminal"></i> TryHackMe</a>
+      <a href="https://www.credly.com/" target="_blank" rel="noopener"><i class="fa-solid fa-award"></i> Credly</a>
+      <a href="https://gonullu.pardus.org.tr/" target="_blank" rel="noopener"><i class="fa-brands fa-linux"></i> Pardus</a>
+    </div>
+
+    <div class="live-terminal">
+      <div class="lt-head">interactive-shell — type 'help'</div>
+      <div class="lt-output" id="lt-output"></div>
+      <div class="lt-input-line">$&nbsp;<input id="lt-input" autocomplete="off" spellcheck="false" aria-label="terminal command input" placeholder="help"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="main-footer">
+  <img src="https://tryhackme-badges.s3.amazonaws.com/turkmert.png" alt="turkmert TryHackMe badge">
+  <p>MERT TURK &copy; <span id="year"></span> — session terminated. connection closed.</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
